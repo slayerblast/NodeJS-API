@@ -28,15 +28,4 @@ app.get('/id/:id', (req, res)=>{
 
 })
 
-app.delete('/id/:id', function (req, res) {
-    let id = parseInt(req.params.id)
-    delete db.memoryDb[id];
-    res.send("tache effacé");
-  });
-
-app.put('/id/:id', function (req, res) {
-   
-    res.send("tache mis à jour");
-  });
-
 module.exports = app;
