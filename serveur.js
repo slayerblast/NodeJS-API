@@ -1,15 +1,24 @@
 const express = require('express');
 const app = express();
+const db = require("./db");
 
 app.use(express.json());
 
+const mapToObj = (m) => {
+    return Array.from(m).reduce((obj, [key, value]) => {
+      obj[key] = value;
+      return obj;
+    }, {});
+  };
+
+  
 app.post('/', (req, res) => {
 	console.log(req.body)
 	res.send(req.body);
 })
 
 app.get('/', (req, res) => {
-	res.send("ceci est la route utilisant la methode GET");
+	res.json(mapToObj(db.memoryDb));
 })
 
 app.get('/id/:id', (req, res)=>{
