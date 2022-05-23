@@ -13,8 +13,9 @@ const mapToObj = (m) => {
 
   
 app.post('/', (req, res) => {
-	console.log(req.body)
-	res.send(req.body);
+	const payload = req.body;
+  db.memoryDb.set(db['id']++, payload);
+  res.status(201).json(payload);
 })
 
 app.get('/', (req, res) => {
