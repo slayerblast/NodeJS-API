@@ -22,8 +22,8 @@ app.get('/', (req, res) => {
 })
 
 app.get('/id/:id', (req, res)=>{
-	console.log(req.params)
-	res.send(req.params)
+    let id = parseInt(req.params.id)
+  res.json(db.memoryDb.get(id));
 
 })
 
