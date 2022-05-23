@@ -28,6 +28,4 @@ app.get('/id/:id', (req, res)=>{
 
 })
 
-
-app.listen(3000);
-console.log('serveur lancé sur le port 3000')
+module.exports = app;
