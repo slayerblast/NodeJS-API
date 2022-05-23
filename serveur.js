@@ -28,6 +28,11 @@ app.get('/id/:id', (req, res)=>{
 
 })
 
+app.delete('/id/:id', function (req, res) {
+    let id = parseInt(req.params.id)
+    delete db[id];
+    res.send('tache effacé');
+  });
 
 app.listen(3000);
 console.log('serveur lancé sur le port 3000')
