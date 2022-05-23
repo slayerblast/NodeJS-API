@@ -3,9 +3,9 @@ const app = express();
 
 
 app.get('/', (req, res) => {
-	res.send("Hello World");
-
+	res.send("ceci est la route utilisant la methode GET");
 })
+
 
 app.listen(3000);
 console.log('serveur lancé sur le port 3000')
