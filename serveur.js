@@ -30,8 +30,13 @@ app.get('/id/:id', (req, res)=>{
 
 app.delete('/id/:id', function (req, res) {
     let id = parseInt(req.params.id)
-    delete db[id];
-    res.send('tache effacé');
+    delete db.memoryDb[id];
+    res.send("tache effacé");
+  });
+
+app.update('/id/:id', function (req, res) {
+   
+    res.send("tache mis à jour");
   });
 
 app.listen(3000);
